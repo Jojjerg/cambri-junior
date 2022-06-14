@@ -17,11 +17,24 @@
             margin-top: 50px;
           "
         >
-          <v-col class="col">Имя </v-col>
-          <v-col class="col">Фамилия</v-col>
-          <v-col class="col">Логин</v-col>
-          <v-col class="col">Почта</v-col>
-          <v-col class="col">Оплатил</v-col>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              width: 700px;
+              text-align: center;
+            "
+            class="users"
+          >
+            <v-col cols="2" class="col">Имя </v-col>
+            <v-col cols="2" class="col">Фамилия</v-col>
+            <v-col cols="2" class="col">Логин</v-col>
+            <v-col cols="2" class="col">Почта</v-col>
+            <v-col cols="2" class="col">Оплатил</v-col>
+            <div><v-icon>mdi-account-cog</v-icon></div>
+          </div>
         </v-row>
         <v-row
           style="
@@ -38,17 +51,19 @@
             style="
               display: flex;
               flex-direction: row;
-              justify-content: center;
+              justify-content: space-between;
               align-items: center;
+              width: 700px;
+              text-align: center;
             "
             class="users"
           >
-            <v-col>{{ user._id }}</v-col>
-            <v-col>{{ user.name }}</v-col>
-            <v-col>{{ user.surname }}</v-col>
-            <v-col>{{ user.username }}</v-col>
-            <v-col>{{ user.email }}</v-col>
-            <v-col>{{ user.payed }}</v-col>
+            <v-col cols="2">{{ user.name }}</v-col>
+            <v-col cols="2">{{ user.surname }}</v-col>
+            <v-col cols="2">{{ user.username }}</v-col>
+            <v-col cols="2">{{ user.email }}</v-col>
+            <v-col cols="2">{{ user.payed }}</v-col>
+            <button v-on:click="showId"><v-icon>mdi-cog</v-icon></button>
           </div>
         </v-row>
       </v-row>
@@ -58,8 +73,6 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-//import LectureList from '../components/Lecture-list.vue';
-//import LectureDetail from '../components/Lecture-detail.vue';
 export default {
   name: "AdminPanel",
   data() {
@@ -72,13 +85,13 @@ export default {
   },
   methods: {
     ...mapActions(["getUsers"]),
+    showId() {
+      let id = this.allUsers
+      console.log(id)
+    }
   },
   created() {
     this.getUsers().then((res) => (this.allUsers = res.data.allUsers));
-  },
-  components: {
-    //LectureList,
-    //LectureDetail
   },
 };
 </script>

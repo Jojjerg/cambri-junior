@@ -46,7 +46,7 @@
                 <v-avatar size="85">
                   <v-img
                       alt="user"
-                      :src="user.avatar"
+                      src="../assets/jojjerg.png"
                       class="add-img"
                       width="85"
                       height="85"

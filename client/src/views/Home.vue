@@ -716,39 +716,6 @@
         </v-row>
       </v-main>
     </div>
-    <template>
-    <v-footer
-        color="#F7F7F8"
-        padless
-    >
-      <v-row
-          justify="center"
-          no-gutters
-      >
-        <v-btn
-            v-for="(Icons, i) in Icons"
-            :key="i"
-            color="#313131"
-            icon
-            rounded
-            class="my-10 px-5"
-        >
-          <v-icon
-              color="#313131"
-              v-text="Icons.icon"
-          >
-          </v-icon>
-        </v-btn>
-        <v-col
-            class="py-5 text-center"
-            cols="12"
-            style="color:#313131"
-        >
-          {{ new Date().getFullYear() }} — <strong>КэмбриДжуниор</strong>
-        </v-col>
-      </v-row>
-    </v-footer>
-    </template>
   </v-main>
 </template>
 

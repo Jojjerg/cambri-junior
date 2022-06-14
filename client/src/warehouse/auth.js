@@ -62,11 +62,11 @@ const actions = {
         return res
     },
 // Вызов метода изменения данных аккаунта
-    async update({commit}, id){
+    async update({commit}, id, updatedUser){
         try {
             commit('change_data_request')
-            let res = await axios.patch(`http://localhost:5000/api/users/profile/${id}`,)
-            if(res.data.success){
+            let res = await axios.patch('http://localhost:5000/api/users/profile/' + id, updatedUser)
+            if(res.data.success !== undefined){
                 commit('change_data_success')
             }
             return res

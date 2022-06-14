@@ -42,6 +42,10 @@ const Schema = mongoose.Schema
      },
      avatar: {
         type: String,
+     },
+     scores: {
+      type: Number,
+      default: 0
      }
  })
 
